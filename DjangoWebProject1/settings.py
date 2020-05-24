@@ -66,7 +66,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                'django.template.context_processors.media', #обработчик для подключения загрузки файлов (6работа)
+                'django.template.context_processors.media',
             ],
         },
     },
@@ -128,10 +128,9 @@ STATIC_ROOT = posixpath.join(*(BASE_DIR.split(os.path.sep) + ['static']))
 
 
 
-#6работа: определение переменных для загрузки файлов в папку media
 
 
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media') # os.path.join склеивает два пути, в данном случае директорию с проектом и 'media', выходит 'папка_с_проектом/media'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media') 
 
 MEDIA_URL = '/media/'
 
