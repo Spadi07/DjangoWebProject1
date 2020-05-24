@@ -1,0 +1,16 @@
+﻿{% extends 'app/menu.html' %}
+
+{% block content %}
+
+
+<form method="post">
+    {% csrf_token %}
+    {{form.as_p}}
+    <div class="but">
+        <button type="submit">Редактировать</button>
+    </div>
+</form>
+
+
+
+{% endblock content %}

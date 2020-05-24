@@ -1,0 +1,26 @@
+{% extends 'app/layout.html' %}
+
+{% block title %} Новости {% endblock %}
+
+{% block content %}
+
+<section id="blog">
+	<h3>Актуальное здесь</h3>
+    <!-- Цикл по всем полученным постам, который выводит их по одному -->
+    {% for post in posts %}
+	<div class="card">
+        <div class="card-header">
+            <p class="card-title">{{ post.title }}</p>
+        </div>
+		<div class="card-body">
+            <p class="card-text"><a href="{% url 'blogpost' id=post.id %}">{{ post.description}}</a> </p>
+	  	</div>
+	  	<div class="card-footer">
+	  		{{ post.date_posted }}
+  		</div>
+	</div>
+    {% endfor %}
+</section>
+
+
+{% endblock %}

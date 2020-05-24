@@ -1,0 +1,136 @@
+﻿{% extends "app/layout.html" %}
+{% load staticfiles %}
+
+
+{% block title %} Наше меню {% endblock %}
+
+
+
+{% block content %}
+
+<!DOCTYPE html>
+<html land="en">
+<head>
+    <meta charset="UTF-8"/>
+    {% load staticfiles %}
+    <link rel="stylesheet" type="text/css" href="{% static 'app/slick/slick.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'app/slick/slick-theme.css' %}">
+    <style type="text/css">
+ body{
+  background: #ECE0F8;
+}
+
+.sl {
+	max-width: 750px;
+	margin: 80px auto;
+    height: 600px;
+}
+
+.sl_slide {
+    position: relative;
+}
+
+.sl_text {
+    position: absolute;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    color: #fff;
+    text-align: center;
+    text-shadow: 1px 1px 1px rgba (0,0,0,0.5); 
+    padding: 20px 0;
+    font-size: 35px;
+     
+}
+
+a{
+  text-decoration: none;
+}
+
+/*Адаптивность картинок и видео*/
+img{
+  max-width: 100%;
+  height: auto;
+}
+
+.my-flex-container_menu_description {
+    justify-content: space-between;
+    text-align: center;
+    width: 1200px;
+    margin: 0 auto;
+    margin-top: 100px;
+}
+
+.my-flex-container_menu_description p {
+    font-size: 30px;
+}
+
+
+
+    </style>
+</head>
+
+<body>
+
+   <div class="my-flex-container_menu_description">
+        <div>
+             <h1>Вкусные напитки и великолепная еда. Секрет того, как сделать жизнь лучше.</h1> 
+        </div>
+            
+        <div>
+             <img src="{% static 'app/img/menu/menu_main.jpg'%}"  width="600" alt=""/>
+        </div>
+
+        <div>
+             <p>
+             Идеальная чашка кофе и вкусная сытная закуска к ней могут поднять вам настроение на целый день. Поэтому мы стремимся к тому, чтобы все, что вы выбираете, было самого лучшего качества.
+             </p>
+        </div>
+       <hr/>
+   </div>
+
+
+
+
+
+  
+  <div class="sl">
+    <div class="sl_slide">
+        <a href="{% url 'off_season' %}">
+        <img src="{% static 'app/slick/multi.jpg' %}" class="sl_img" alt="" width=""/>
+        </a>
+        <div class="sl_text">
+          <p>Межсезонная обувь</p>
+        </div>
+   </div>
+
+    <div class="sl_slide">
+        <a href="{% url 'winter' %}">
+        <img src="{% static 'app/slick/zima.jpg' %}" class="sl_img" alt="" width=""/>
+        </a>
+      <div class="sl_text">
+          <p>Зимняя обувь</p>
+      </div>
+        </div>
+
+    <div class="sl_slide">
+        <a href="{% url 'summer' %}">
+        <img src="{% static 'app/slick/leto.jpg' %}" class="sl_img" alt="" width=""/>
+        </a>
+      <div class="sl_text">
+          <p>Летняя обувь</p>
+      </div>
+        </div>
+      </div>
+
+  <script src="http://yastatic.net/jquery/2.1.3/jquery.min.js"></script>
+  <script type="text/javascript" src="{% static 'app/slick/slick.min.js' %}"></script>
+
+  <script type="text/javascript">
+      $('.sl').slick();
+  </script>
+  </body>
+</html>
+
+
+{% endblock %}

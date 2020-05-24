@@ -1,0 +1,52 @@
+{% extends 'app/menu.html' %}
+{% load static %}
+{% block content %}
+<div class='col-sm-4'>
+<img src="{{ product.image.url }}" style="width:100%";/>
+
+</div>
+
+<div class='col-sm-8'>
+<h3 class='text-center'> {{product.title }}</h3>
+<p> {{product.description}}</p>
+<p>{% lorem %}</p>
+    <p>{% lorem %}</p>
+    <p>{% lorem %}</p>
+<hr>
+    <p style="font-size:20px">Цена: <strong>{{product.price}} Р </strong> </p>
+
+    <a href='#' class='add_to_cart' data-slug='{{ product.slug }}'><button class="btn btn-danger">Добавить в корзину</button></a>
+</div>
+
+    <script type="text/javascript" src="{% static 'app/js/jquery.js' %}"></script>
+    <script type="text/javascript" src="{% static 'app/js/bootstrap.min.js' %}"></script>
+
+<script>
+    $(document).ready(function () {
+        $('.add_to_cart').on('click', function (e){
+            e.preventDefault()
+            product_slug = $(this).attr('data-slug')
+            data = {
+                product_slug: product_slug
+            }
+            $.ajax({
+                type: "GET",
+                url: '{% url "add_to_cart" %}',
+                data: data,
+                success: function (data) {
+                    $("#cart_count").html(data.cart_total)
+                }
+            })
+        })
+    })
+</script>
+
+
+
+
+
+ 
+
+
+
+{% endblock content %}

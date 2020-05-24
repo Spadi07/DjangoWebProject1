@@ -1,0 +1,52 @@
+{% extends "app/layout.html" %}
+{% load staticfiles %}
+
+
+{% block title %} Полезные ресурсы {% endblock %}
+
+
+
+{% block content %}
+
+<section id="links">
+
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="links_title">Полезные ресурсы тут</div>
+        </div>
+        <hr/>
+
+        <div class="row justify-content-center">
+            <div>
+                <a href="https://vyborexperta.ru/odezhda-i-obuv/luchshie-brendy-krossovok/" target="_blank">
+                    <img src="{% static 'app/content/typessneakers.jpg' %}"  alt="" width="450">
+                </a>
+                <p>беговые кроссовки</p>
+            </div>
+        </div>
+        <hr/>
+
+
+        <div class="row justify-content-center">
+            <div>
+                <a href="https://obliqo.ru/vse-vidy-obuvi-spisok-s-foto/" target="_blank">
+                    <img src="{% static 'app/content/vidobuv.jpg' %}"  alt="" width="450">
+                </a>
+                <p>Все виды обуви</p>
+            </div>
+        </div>
+        <hr/>
+
+        <div class="row justify-content-center">
+            <div>
+                <a href="https://itaita.ru/shoe_care.php" target="_blank">
+                    <img src="{% static 'app/content/uhod.jpg' %}"  alt="" width="450">
+                </a>
+                <p>Уход за обувью</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+{% endblock %}

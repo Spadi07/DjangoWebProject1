@@ -1,0 +1,130 @@
+﻿@font-face {
+    font-family: 'Taraxacum';
+    src: url('../fonts/Taraxacum.otf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.nav li a {
+	font-family: Taraxacum;
+    font-size: 17px;
+    color: #fff;
+    text-decoration: none;
+}
+
+.nav li p {
+	font-family: Taraxacum;
+    margin: 0;
+    font-size: 24px;
+    color: #fff;
+    text-decoration: none;
+}
+
+
+.nav_wrapper {
+    background: url(../img/header3.jpg) no-repeat center top / cover;
+}
+
+.navbar {
+	font-family: Taraxacum;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.logo:hover {
+    -webkit-filter: brightness(0.8);
+    filter: brightness(0.8);
+}
+
+
+footer {
+	font-family: Taraxacum;
+    font-size: 30px;
+    margin-top: 50px;
+    padding-bottom: 20px;
+    text-align: center;
+    background-color: #E3CEF6;
+}
+
+footer img {
+    margin-top: 10px;
+    height: 50px;
+}
+
+footer .nav .nav-item .nav-link {
+    font-size: 25px;
+    color: #000000;
+}
+
+.logo img {
+    height: 180px;
+}
+
+#links {
+    padding-top: 70px;
+    font-size: 40px;
+    color: #000000;
+}
+
+#links .links_title {
+        font-size: 60px;
+}
+
+#links img:hover {
+    -webkit-filter: brightness(0.7);
+    filter: brightness(0.7);
+}
+
+#links p {
+    text-align: center;
+}
+
+
+#content{
+	margin-top: 50px;
+}
+
+#name{
+	font-size: 30px;
+	text-align: center;
+}
+
+.list-group{
+	width: 100%;
+	font-size: 18px;
+	border-style: double;
+	border-radius: 5px;
+}
+
+
+#cart_h{
+	margin-top: 50px;
+}
+
+.my-cart {
+	font-family: 'Times New Roman';
+	font-size: 15px;
+}
+
+#order_form {
+    padding-top: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+}
+
+#order_form input, #order_form select, #order_form textarea  {
+    width: 40%;
+}
+
+#order_form .but {
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 20px;
+}
+
+#order_form .but button {
+    padding: 10px;
+}

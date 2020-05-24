@@ -1,0 +1,35 @@
+{% extends 'app/layout.html' %}
+
+{% block title %} Блог {% endblock %}
+
+{% block content %}
+
+
+{% if user.is_superuser %}
+<section id="new_post">
+	<h3>Добавить новость</h3>
+    <form method="post" enctype="multipart/form-data"> <!-- enctype обязателен для того что бы передать картинку! -->
+        {% csrf_token %}
+        {{ form.as_p }}
+        <div class="but">
+            <button type="submit">Опубликовать</button>
+        </div>
+        
+    </form>
+</section>
+
+<!-- иначе -->
+{% else %}
+
+<section id="new_post">
+	<h3>Добавить статью</h3>
+    <form method="post" enctype="multipart/form-data"> <!-- enctype обязателен для того что бы передать картинку! -->
+        {% csrf_token %}
+        {{ form.as_p }}
+    <p>Для того,чтобы добавить новость <a style="color:red" href="{% url 'login' %}">войдите как администратор</a> </p> 
+    </form>
+</section>
+
+{% endif %}
+
+{% endblock %}

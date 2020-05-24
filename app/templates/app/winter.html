@@ -1,0 +1,82 @@
+﻿<!DOCTYPE html>
+<html land="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Зимняя обувь</title>
+    {% load staticfiles %}
+    <link rel="stylesheet" href="{% static 'app/content/sitelayout.css' %}">
+        <style type="text/css">
+  body{
+  background: #75768f;
+}
+        </style>
+</head>
+
+<body>
+        <div class="my-flex-container_buttons">   
+              <div class="my-flex-block">
+                  <a class="button" href="{% url 'summer' %}">&lt; Летняя обувь</a>
+              </div>
+
+              <div class="my-flex-block">
+                  <a class="button" href="{% url 'home' %}">На главную</a>
+              </div>
+
+              <div class="my-flex-block">
+                  <a class="button" href="{% url 'off_season' %}">Межсезонка &gt;</a>
+                </div> 
+        </div>
+        <hr/>
+
+        <div class="my-flex-container_deserts_description">
+            <h1>В любую непогоду</h1>
+            <div>
+                <p>На улице минус? Снег лежит по колено, а дороги покрыты плотным слоем льда? Не важно! Ты готов даже к самым трудным испытаниям природы!</p>
+            </div>
+            
+            <div>
+                <img src="{% static 'app/img/menu/zima/zimahead.jpg'%}"  width="600" alt="leto"/>
+            </div>
+
+            <div>
+                <p>
+                    Лучшие модели этой зимы. Наивысшее качество, натуральные материалы и низкие цены. Это то, что нужно каждому в холлодную зимнюю непогоду. Главная задача зимней обуви - держать температуру, сохранять тепло и согревать своего владельца, и именно эти модели прекрасно справляются с этими задачами!
+                </p>
+            </div>
+        </div>
+        
+
+        <div class="my-flex-container_deserts">
+              <div class="my-flex-block">
+                  <img src="{% static 'app/img/menu/zima/Anta.jpg'%}"   alt="krossovki zima"/>
+                  <p>
+                  Anta<br />
+                      <br/>
+                  6799 р
+                  </p>
+              </div>
+
+              <div class="my-flex-block">
+                  <img src="{% static 'app/img/menu/zima/Konty.jpg'%}"   alt="krossovki zima"/>
+                  <p>
+                  Konty<br/>
+                      <br/>
+                  2399 р
+                  </p>
+              </div>
+
+              <div class="my-flex-block">
+                  <img src="{% static 'app/img/menu/zima/Vitacci.jpg'%}"   alt="krossovki zima"/>
+                  <p>
+                  Vitacci<br/>
+                      <br/>
+                  5499 р
+                  </p>
+              </div> 
+        </div>
+        
+
+</body>
+
+
+</html>

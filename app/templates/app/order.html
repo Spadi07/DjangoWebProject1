@@ -1,0 +1,29 @@
+﻿{% extends 'app/menu.html' %}
+
+{% block content %}
+
+
+    <form method="post" id="order_form">
+        {% csrf_token %}
+        <p>Имя:</p>
+        {{ form.first_name }}
+        <p>Фамилия:</p>
+        {{ form.last_name }}
+        <p>Размер обуви:</p>
+        {{ form.size }}
+        <p>Контактный телефон:</p>
+        {{ form.phone }}
+        <p>Адрес доставки:</p>
+        {{ form.address }}
+        <p>Способ доставки:</p>
+        {{ form.buying_type }}
+        <p>Комментарии к заказу:</p>
+        {{ form.comments }}
+        <div class="but">
+            <button type="submit">Сделать заказ</button>
+        </div>
+    </form>
+
+
+
+{% endblock content %}

@@ -1,0 +1,48 @@
+{% extends 'app/menu.html' %}
+
+{% block content %}
+<h2 class="text-center" id="cart_h">Ваш предварительный заказ</h2>
+<hr />
+<br/>
+
+<div class="my-cart">
+<table class="table">
+    <tr>
+        <td class="text-center"><strong>Товар</strong></td>
+        <td class="text-center"><strong>Кол-во</strong></td>
+        <td class="text-center"><strong>Цена</strong></td>
+        <td class="text-center"></td>
+    </tr>
+    {% for item in cart.items.all %}
+
+    <tr>
+        <td class="text-center">{{ item.product.title }}</td>
+        <td class="text-center">{{ item.qty }} </td>
+
+        <td class="text-center">{{ item.item_total }} руб.</td>
+        <td></td>
+    </tr>
+
+    {% endfor %}
+    <tr>
+        <td>
+
+        </td>
+        <td class="text-center">
+            <strong>Итого:</strong>
+        </td>
+        <td class="text-center">
+           <strong>{{ cart.cart_total }} руб.</strong> 
+        </td>
+        <td class="text-center">
+            
+        </td>
+    </tr>
+</table>
+<a href="{% url 'create_order' %}" class="pull-right"><button class="btn btn-success">Оформить заказ</button></a>
+</div>
+
+
+
+
+{% endblock content %}

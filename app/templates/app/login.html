@@ -1,0 +1,49 @@
+{% extends "app/layout.html" %}
+{% block title %} Вход {% endblock %}
+{% block content %}
+
+
+
+<section id="logintitle">
+    <h4>Вход</h4>
+</section>
+
+
+<section id="loginForm">
+    
+ 
+    <form action="." method="post" class="form-horizontal">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="id_username">Логин:</label>
+            <div class="offset-4 col-4">
+                {{ form.username }}
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="id_password">Пароль:</label>
+            <div class="offset-4 col-4">
+                {{ form.password }}
+            </div>
+        </div>
+        <div class="form-group">
+            <div>
+                <input type="hidden" name="next" value="/" />
+                <input type="submit" value="Войти" class="submit" />
+            </div>
+        </div>
+        {% if form.errors %}
+        <p class="validation-summary-errors"> Вход на сайт не был произведён. Возможно, Вы ввели неверное имя пользователя или пароль.</p>
+        {% endif %}
+    </form>
+</section>
+
+{% endblock %}
+
+
+{% block scripts %}
+
+{% load staticfiles %}
+<script src="{% static 'app/scripts/jquery.validate.min.js' %}"></script>
+
+{% endblock %}

@@ -1,0 +1,58 @@
+{% extends 'app/layout.html' %}
+{% load static %}
+
+{% block title %} О нас {% endblock %}
+
+{% block content %}
+
+<section id="about">
+    <div class="container">
+    <div class="row justify-content-center">
+        <div class="about_title">О нас</div>
+    </div>
+
+
+    <div class="row justify-content-center mt-4 about_text">
+        <div class="col-6">
+            <p>
+                Stock Sneakers — это магазин, который каждый день меняет жизнь людей через спорт, создавая новое и стирая границы невозможного. Мы живем спортом, вдохновляем своим примером и помогаем людям делать уверенные шаги навстречу ярким достижениям. Если ты так же, как и мы, увлечен спортом и мечтаешь делиться своей страстью с другими, добро пожаловать в команду!
+            </p>
+        </div>
+        <div class="col-6">
+            <img class="img-fluid mt-3" src="{% static 'app/img/about1.jpg'%}" alt="Про магазин">
+        </div>
+    </div>
+    <hr/>
+
+    <div class="row justify-content-center mt-4 about_text">
+        <div class="col-6">
+            <img class="img-fluid mt-3" src="{% static 'app/img/about2.jpg'%}" alt="Про магазин">
+        </div>
+        <div class="col-6">
+            <p>
+                Главной задачей для нас является предоставление услуг для большинства желающих приобрести спортивную или иную обувь, обеспечить качественную доставку и быструю обработку заказов. Каждый клиент очень важен, поэтому наша команда обеспечит вас всем необходимым вниманием и с радостью поможет в решениях возникших проблем!
+            </p>
+        </div>
+    </div>
+    <hr/>
+
+
+    <div class="row justify-content-center mt-4 about_text">
+        <div class="col-6">
+            <p>
+                Магазин "Stock Sneakers" предлагает клиентам широкий ассортимент обуви на любой сезон и вкус - лёгкие летние кеды, полуботинки, кроссовки, зимние кеды и угги, бутсы и многое другое, а главное - всё по низким ценам!
+            </p>
+        </div>
+        <div class="col-6">
+            <img class="img-fluid mt-3" src="{% static 'app/img/about3.jpg'%}" alt="Про магазин">
+        </div>
+
+    </div>
+
+    </div>
+</section>
+
+
+{% endblock %}
+
+

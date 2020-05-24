@@ -1,0 +1,146 @@
+/*!
+ * Start Bootstrap - Shop Homepage (http://startbootstrap.com/)
+ * Copyright 2013-2016 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
+ */
+
+body {
+    padding-top: 70px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+}
+
+.slide-image {
+    width: 100%;
+}
+
+.carousel-holder {
+    margin-bottom: 30px;
+}
+
+.carousel-control,
+.item {
+    border-radius: 4px;
+}
+
+.caption {
+    height: 130px;
+    overflow: hidden;
+}
+
+.caption h4 {
+    white-space: nowrap;
+}
+
+.thumbnail img {
+    width: 100%;
+}
+
+.ratings {
+    padding-right: 10px;
+    padding-left: 10px;
+    color: #d17581;
+}
+
+.thumbnail {
+    padding: 0;
+}
+
+.thumbnail .caption-full {
+    padding: 9px;
+    color: #333;
+}
+
+footer {
+    margin: 50px 0;
+}
+
+
+
+@font-face {
+    font-family: 'BarberryLetters';
+    src: url('../fonts/BarberryLetters.otf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
+
+
+
+body {
+    padding: 0;
+    margin: 0;
+    font-family: BarberryLetters;
+}
+
+
+
+.nav li a {
+    font-size: 30px;
+    color: #fff;
+    text-decoration: none;
+}
+
+.nav li p {
+    margin: 0;
+    font-size: 30px;
+    color: #fff;
+    text-decoration: none;
+}
+
+
+.nav_wrapper {
+    background: url(../img/header3.jpg) no-repeat center top / cover;
+}
+
+.navbar {
+    margin: 0 auto;
+    text-align: center;
+}
+
+.logo:hover {
+    -webkit-filter: brightness(0.8);
+    filter: brightness(0.8);
+}
+
+
+footer {
+    font-size: 30px;
+    margin-top: 50px;
+    padding-bottom: 20px;
+    text-align: center;
+    background-color: #E3CEF6;
+}
+
+footer img {
+    margin-top: 10px;
+    height: 50px;
+}
+
+footer .nav .nav-item .nav-link {
+    font-size: 30px;
+    color: #000000;
+}
+
+.logo img {
+    height: 200px;
+}
+
+#links {
+    padding-top: 70px;
+    font-size: 40px;
+    color: #000000;
+}
+
+#links .links_title {
+        font-size: 60px;
+}
+
+#links img:hover {
+    -webkit-filter: brightness(0.7);
+    filter: brightness(0.7);
+}
+
+#links p {
+    text-align: center;
+}

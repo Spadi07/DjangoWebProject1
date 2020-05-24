@@ -1,0 +1,55 @@
+{% extends 'app/layout.html' %}
+
+{% block title %} Блог {% endblock %}
+
+{% block content %}
+
+<section id="blogpost">
+    {% if post.image and post.image.url != '/media/temp.jpg' %}
+    <div class="post_image">
+        <img src="{{ post.image.url }}" width="600px" height="400px" alt="Изображение"/>
+    </div>
+{% endif %}
+    <div>
+        <h3> {{ post.title }} </h3>
+	    <p> {{post.content }} </p>
+    </div>
+
+
+
+<!-- если пользователь залогинен то показываем форму для комментариев -->
+{% if user.is_authenticated %}
+<section id="comment_writing">
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <div class="but">
+            <button type="submit">Отправить комментарий</button>
+        </div>
+    </form>
+</section>
+<!-- иначе-->
+{% else %}
+<section id="comment_message">
+    <p>Для того,чтобы оставить комментарий <a href="{% url 'login' %}">войдите</a> или <a href="{% url 'registration' %}">зарегистрируйтесь</a></p>
+</section>
+{% endif %}
+
+<!-- вывод всех комментов -->
+<section id="comments">
+{% for comment in comments %}
+<div class="card">
+    <div class="card-body">
+        <p class="card-text">{{ comment.text }}</p>
+    </div>
+    <div class="card-footer">
+        <div class="card-author"> Автор: {{ comment.author }}  </div> 
+        <div class="card-date"> {{ comment.date_posted }} </div>
+    </div>
+</div>
+{% endfor %}
+</section>
+
+</section>
+
+{% endblock %}

@@ -1,0 +1,4 @@
+I:\food\DjangoWebProject1\DjangoWebProject1\obj\Debug\DjangoWebProject1.pyproj.CoreCompileInputs.cache
+I:\food 5 laba\DjangoWebProject1\DjangoWebProject1\obj\Debug\DjangoWebProject1.pyproj.CoreCompileInputs.cache
+C:\DendiBoss\DjangoWebProject1\DjangoWebProject1\obj\Debug\DjangoWebProject1.pyproj.CoreCompileInputs.cache
+C:\Users\user\Desktop\DendiBoss\DjangoWebProject1\DjangoWebProject1\obj\Debug\DjangoWebProject1.pyproj.CoreCompileInputs.cache

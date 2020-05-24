@@ -1,0 +1,108 @@
+﻿{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link href="{% static 'app/content/sitelayout.css' %}" rel="stylesheet"/>
+ 
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link href="{% static 'app/content/menu.css' %}" rel="stylesheet"/>
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> 
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script> 
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <title> {% block title %}{% endblock %}</title>
+    </head>
+
+    <body>
+      <nav class="nav_wrapper">
+        <ul class="nav nav_top justify-content-between navbar">
+          <li class="nav-item">
+            <a class="nav-link logo" href="{% url 'home' %}"><img src="{% static 'app/img/logo.png' %}" width="200" height ="200" alt="StockSneakers"/></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'home' %}">Главная</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'about' %}">О нас</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'contact' %}">Контакты</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'links' %}">Ресурсы</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'menu' %}">Меню</a>
+          </li>
+
+
+          <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Категории</a>
+                    
+                    <div class="dropdown-menu" style="background-image: linear-gradient(rgba(255,0,0,0.9), rgba(255,245,215,0.9))";>
+                        
+                        {% for category in categories %}
+                        <a class="dropdown-item" href="{{ category.get_absolute_url }}">{{ category.name }}</a>
+                        {% endfor %}
+                        
+                    </div>
+                    
+          </li>
+
+
+
+
+
+
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'blog' %}">Новости</a>
+          </li>
+
+          {% if user.is_superuser %}
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'newpost' %}">Добавить новость</a>
+          </li>
+          {% endif %}
+
+
+          
+
+          {% if not user.is_authenticated %}
+          <li class="nav-item">
+          <a class="nav-link" href="{% url 'login' %}">Вход</a>
+          </li>
+          <li class="nav-item">
+          <a class="nav-link" href="{% url 'registration' %}">Регистрация</a>
+          </li>
+          {% else %}
+          <li>
+          <p>Добро пожаловать, {{ user.username }}</p>
+          </li>
+          <li>
+          <a class="nav-link" href="{% url 'logout' %}">Выход</a>
+          </li>
+          {% endif %}
+
+        </ul>
+      </nav>
+
+
+
+      {% block content %}
+      {% endblock %}
+
+
+
+
+
+
+    
+
+
+    </body>
+</html>

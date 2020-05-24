@@ -1,0 +1,129 @@
+{% extends 'app/menu.html' %}
+{% load static %}
+
+{% block content %}
+<h2 class="text-center" id="cart_h">Ваша корзина</h2>
+<hr />
+<br/>
+{% if cart.items.count > 0 %}
+<div class="my-cart">
+<table class="table">
+    <tr>
+        <td class="text-center"><strong>Товар</strong></td>
+        <td class="text-center"><strong>Кол-во</strong></td>
+        <td class="text-center"><strong>Цена</strong></td>
+        <td class="text-center"></td>
+    </tr>
+    {% for item in cart.items.all %}
+
+    <tr id="{{ item.product.slug}}" class="cart-item-{{ item.product.id }}">
+        <td class="text-center">{{ item.product.title }}</td>
+        <td class="text-center">
+            {{ item.qty }}
+
+        </td>
+        <td class="text-center" id="cart-item-total-{{ item.id }}">{{ item.item_total }} руб.</td>
+        <td class="text-center"><a href='#' class='remove_from_cart' data-slug="{{ item.product.slug }}" data-id="{{ item.product.id }}"><button class="btn btn-default" style="font-size:13px">Удалить из корзины</button></a></td>
+    </tr>
+
+    {% endfor %}
+    <tr>
+        <td>
+
+        </td>
+        <td class="text-center">
+            <strong>Итого:</strong>
+        </td>
+        <td class="text-center" id="cart-total-price">
+           <strong>{{ cart.cart_total }} руб.</strong> 
+        </td>
+        <td class="text-center">
+            
+        </td>
+    </tr>
+</table>
+<br />
+<br />
+<a href='{% url "checkout" %}' class="pull-right"><button class="btn btn-info">Предварительный заказ</button></a>
+<br />
+<br />
+<br />
+</div>
+<h3 class="cart-empty"></h3>
+{% else %}
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<h3 class="text-center">Ваша корзина пуста</h3>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+{% endif %}
+
+
+
+    <script type="text/javascript" src="{% static 'app/js/jquery.js' %}"></script>
+    <script type="text/javascript" src="{% static 'app/js/bootstrap.min.js' %}"></script>
+
+<script>
+
+    $(document).ready(function () {
+        $('.cart-empty').css('display', 'none')
+        $('.remove_from_cart').on('click', function (e){
+            e.preventDefault()
+            product_slug = $(this).attr('data-slug')
+            item_product_id = $('.cart-item').attr('data-id')
+            data = {
+                product_slug: product_slug
+            }
+            $.ajax({
+            type: "GET",
+                url: '{% url "remove_from_cart" %}',
+                data: data,
+                success: function (data) {
+                    $("#cart_count").html(data.cart_total)
+                    $('.cart-item-'+item_product_id).css('display', 'none')
+                    $('#'+product_slug).remove()
+                    $('#cart-total-price').html('<strong>' + parseFloat(data.cart_total_price).toFixed(2) + 'руб. </strong>')
+                    if(parseInt(data.cart_total) == 0) {
+                        $('.my-cart').css('display', 'none')
+                        $('.cart-empty').css('display', 'block')
+                        $('.cart-empty').html('<h3 class="text-center">Ваша корзина пуста</h3>')
+                    } 
+                }
+            })
+        })
+    })
+
+</script>
+
+
+
+
+
+
+
+
+
+{% endblock content %}

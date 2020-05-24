@@ -1,0 +1,21 @@
+﻿{% extends 'app/menu.html' %}
+
+{% block content %}
+
+
+{% for order in orders %}
+<div>
+    <p>{{ order.first_name }}</p>
+    <p>{{ order.last_name }}</p>
+    <p>{{ order.buying_type }}</>
+    <p>{{ order.date }}</p>
+    <p>{{ order.status }}</p>
+    <p>{{ order.total }} Р</p>
+    <a href="{% url 'edit_order' id=order.id %}">Редактировать</a>
+    <a href="{% url 'delete_order' id=order.id %}">Удалить</a>
+</div>
+{% endfor %}
+
+
+
+{% endblock content %}
